@@ -10,8 +10,9 @@ import java.util.*;
 
 public class emc2 {
 	
-	// Intro LightSpeed:
+	// Intro Constants:
 	private static float LightSpeed = (float) (2.998 * Math.pow(10,8));
+	private static float Bomb = (float) (4.2 * Math.pow(10, 12));
 	
 	public static void main(String[] args) {
 		Scanner userInput = new Scanner(System.in);
@@ -26,9 +27,11 @@ public class emc2 {
 		
 		// Calculations:
 		float energy = (float) (mass * Math.pow(LightSpeed, 2));
+		float bombEnergy = (float) (energy / Bomb);
 		
 		// Output:
 		System.out.println("If " + mass + " kg was converted into energy, " + energy + " joules would be produced.");
+		System.out.println(String.format("This is also equal to %s kiloton bomb.", String.valueOf(bombEnergy)));
 		
 	}
 
